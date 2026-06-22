@@ -1,1 +1,15 @@
-hello
+---
+layout: default
+title: "الصفحة الرئيسية"
+---
+
+<h1>أحدث الأبحاث والمقالات</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li style="margin-bottom: 15px;">
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      <small style="color: #666;">تاريخ النشر: {{ post.date | date: "%Y-%m-%d" }}</small>
+    </li>
+  {% endfor %}
+</ul>
